@@ -42,6 +42,38 @@
             </div>
         </div>
 
+        <div class="row my-5">
+            <div class="col-12">
+                <form action="/search" method="post">
+                    @csrf
+                    <div class="row">
+
+                        <label class="col-sm-1 col-form-label">Megnevezés:</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" name="name3" value="">
+                        </div>
+
+                        <label class="col-sm-2 col-form-label">Származási hely:</label>
+                        <div class="col-sm-3">
+                            <select name="origin3" class="form-control">
+                                <option value="0" selected>Kérem válasszon</option>
+                                @foreach ($origins as $origin)
+                                    {{-- @if ($origin == $origin2)
+                                      <option value="{{ $origin }}" selected >{{ $origin }}</option>
+                                    @else --}}
+                                      <option value="{{ $origin }}" >{{ $origin }}</option>
+                                    {{-- @endif --}}
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="col-sm-2">
+                            <button type="submit" class="btn btn-primary" name="btn_search">Keresés</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
 
         <div class="row">
             <div class="col-12">

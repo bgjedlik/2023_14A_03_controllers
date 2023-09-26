@@ -71,4 +71,16 @@ class CarsController extends Controller
         ]);
     }
 
+    public function search(Request $request){
+        $filteredCars = [];
+
+
+        return view('cars.index',[
+            'cars' => $filteredCars,
+            'name' => $request->name,
+            'origins' => $this->origins,
+            'origin2' => $request->origin
+        ]);
+    }
+
 }
